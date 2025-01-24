@@ -1,0 +1,129 @@
+<mat-card class="container-form">
+  @if (formRoute === 'login') {
+  <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+
+    <h1>Login</h1>
+
+    <mat-form-field style="margin-bottom: 2%;">
+      <mat-label>Coloque seu email</mat-label>
+      <input
+        matInput
+        required
+        formControlName="email" />
+      @if (email?.invalid && (email?.dirty || email?.touched)) {
+      <mat-error>{{ getErrorMessage('email') }}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Coloque sua senha</mat-label>
+      <input matInput [type]="hide() ? 'password' : 'text'"
+        formControlName="password" />
+      @if (password?.invalid && (password?.dirty || password?.touched)) {
+      <mat-error>{{ getErrorMessage('password') }}</mat-error>
+      }
+      <button
+        class="hide-btn"
+        mat-icon-button
+        matSuffix
+        (click)="hidePassword($event)"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide()"
+        type="button">
+        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <div>
+      <a routerLink="/register" routerLinkActive="active">
+        Não possui uma conta? <span style="color: violet">Cadastrar</span>
+      </a>
+    </div>
+
+    <button mat-raised-button class="submit-btn" type="submit">Enviar</button>
+
+  </form>
+
+  } @else if (formRoute === 'register') {
+
+  <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <h1>Cadastro</h1>
+    <mat-form-field style="margin-bottom: 2%;">
+      <mat-label>Coloque seu email</mat-label>
+      <input
+        matInput
+        placeholder="ex: douglas@gmail.com"
+        required
+        formControlName="email" />
+      @if (email?.invalid && (email?.dirty || email?.touched)) {
+      <mat-error>{{ getErrorMessage('email') }}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field style="margin-bottom: 2%; width: 100%;">
+
+      <mat-label>Coloque sua senha</mat-label>
+      <input matInput [type]="hide() ? 'password' : 'text'"
+        formControlName="password" />
+      <mat-progress-bar mode="determinate"
+        [value]="passwordStrengthValue()"></mat-progress-bar>
+
+      <span [style]="{ color: passwordStrengthColor }">{{ passwordStrength
+        }}</span>
+      <button
+        class="hide-btn"
+        mat-icon-button
+        matSuffix
+        (click)="hidePassword($event)"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide()"
+        tabindex="-1"
+        type="button">
+        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+
+      <button
+        mat-mini-fab
+        matSuffix
+        class="question-btn"
+        tabindex="-1"
+        (click)="openHintPassword()"
+        type="button">
+        <mat-icon style="margin: 0;">question_mark</mat-icon>
+      </button>
+
+    </mat-form-field>
+
+    <mat-form-field style="margin-bottom: 2%" class="password-field">
+
+      <mat-label>Confirme sua senha</mat-label>
+      <input matInput [type]="hide() ? 'password' : 'text'"
+        formControlName="confirmPassword" />
+      @if (confirmPassword?.invalid && (confirmPassword?.dirty ||
+      confirmPassword?.touched)) {
+      <mat-error>{{ getErrorMessage('confirmPassword') }}</mat-error>
+      }
+      <button
+        class="hide-btn"
+        mat-icon-button
+        matSuffix
+        (click)="hidePassword($event)"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide()"
+        type="button">
+        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+
+    </mat-form-field>
+
+    <div>
+      <a routerLink="/login" routerLinkActive="active">
+        Já possui uma conta? <span style="color: violet">Entrar</span>
+      </a>
+    </div>
+
+    <button mat-raised-button class="submit-btn" type="submit">Enviar</button>
+  </form>
+  }
+
+</mat-card>

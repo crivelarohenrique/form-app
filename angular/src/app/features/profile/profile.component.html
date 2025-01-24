@@ -1,0 +1,26 @@
+<mat-card>
+  <div class="div-title">
+    <h1>Usuário logado</h1>
+  </div>
+
+  <form class="form-user">
+
+    <div class="div-input">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [value]="email" readonly>
+      </mat-form-field>
+    </div>
+   
+    <div class="div-input">
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput value="**********" readonly>
+      </mat-form-field>
+    </div>
+  
+  </form>
+
+  <button class="logout-btn" mat-raised-button (click)="logout()">Deslogar</button>
+
+</mat-card>

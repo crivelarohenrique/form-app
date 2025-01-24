@@ -1,0 +1,54 @@
+mat-card {
+  margin-top: 5%;
+}
+
+.div-title {
+  background-color: rgb(152, 206, 70);
+  font-family: "Roboto", serif;
+  font-style: bold;
+  font-size: 16px;
+}
+
+.div-title h1 {
+  text-align: center;
+  color: black;
+}
+
+.div-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+}
+
+.div-input mat-form-field {
+  width: 30%;
+}
+
+.form-user {
+  display: flex;
+  flex-direction: column;
+  margin: 2% 0;
+  height: 250px;
+  justify-content: center;
+}
+
+.edit-btn {
+  color: rgb(255, 255, 255);
+  cursor: pointer; 
+  font-weight: 400;
+}
+
+.logout-btn {
+  height: 60px;
+  border-radius: 0;
+  font-size: 20px;
+}
+
+@media (max-width: 600px) {
+
+  .div-input mat-form-field {
+    width: 80%;
+  }
+  
+}
