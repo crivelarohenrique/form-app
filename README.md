@@ -25,16 +25,15 @@ Esse formulário é para mostrar minhas habilidades com JDBC, Spring Security e 
 
 Página Login inicial
 
-![image](https://github.com/user-attachments/assets/c2848c91-0c57-4036-b482-da0f69837f71)
+![image](https://github.com/user-attachments/assets/71273b5f-1665-49a2-b3c4-775d353de89f)
 
 Página Registro
 
-![image](https://github.com/user-attachments/assets/f2a2c122-f9ed-4cbe-b7c1-4a9c96a5126b)
+![image](https://github.com/user-attachments/assets/8fd2ba6d-4894-47e8-84e4-dad6758ec484)
 
 Teste Cobertos (Karma e Jasmine)
 
-![image](https://github.com/user-attachments/assets/1554743a-2103-48b3-974f-cbc7b8921d7f)
-
+![image](https://github.com/user-attachments/assets/32b4f472-3cbb-492b-81a7-e51b413a7ad3)
 
 Deploy na Heroku:
 
